@@ -5,6 +5,8 @@
     const navLinksItems = document.querySelectorAll('.nav-link');
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
+    const heroParallax = document.getElementById('hero-bg-parallax');
+    const parallaxElements = document.querySelectorAll('[data-parallax-speed]');
 
     menuToggle?.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
@@ -18,13 +20,34 @@
         });
     });
 
+    let ticking = false;
+    let currentScroll = 0;
+    let targetScroll = 0;
+
     window.addEventListener('scroll', () => {
+        targetScroll = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    function lerp(a, b, t) {
+        return a + (b - a) * t;
+    }
+
+    function handleScroll() {
+        currentScroll = lerp(currentScroll, targetScroll, 0.12);
+
         if (header) {
-            header.classList.toggle('scrolled', window.scrollY > 50);
+            header.classList.toggle('scrolled', currentScroll > 50);
         }
 
         const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 120;
+        const scrollPos = currentScroll + 120;
 
         sections.forEach(section => {
             const top = section.offsetTop;
@@ -40,7 +63,31 @@
                 });
             }
         });
-    });
+
+        if (heroParallax) {
+            const heroOffset = currentScroll * 0.28;
+            heroParallax.style.transform = `translate3d(0, ${heroOffset}px, 0) scale(1.03)`;
+        }
+
+        parallaxElements.forEach(el => {
+            const speed = parseFloat(el.getAttribute('data-parallax-speed'));
+            const section = el.closest('section');
+            if (section) {
+                const rect = section.getBoundingClientRect();
+                const sectionVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                if (sectionVisible) {
+                    const offset = rect.top * speed;
+                    el.style.transform = `translate3d(0, ${offset}px, 0)`;
+                }
+            }
+        });
+
+        if (Math.abs(currentScroll - targetScroll) > 0.5) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+            });
+        }
+    }
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -49,7 +96,7 @@
             }
         });
     }, {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
 
