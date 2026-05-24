@@ -112,8 +112,10 @@
         const email = document.getElementById('email')?.value?.trim();
         const message = document.getElementById('message')?.value?.trim();
 
+        const t = window.__t || (() => '');
+
         if (!name || !email || !message) {
-            formStatus.textContent = 'Please fill in all fields.';
+            formStatus.textContent = t('contact.field_error');
             formStatus.className = 'error';
             return;
         }
@@ -131,15 +133,15 @@
             const data = await response.json();
 
             if (response.ok) {
-                formStatus.textContent = data.message || 'Message sent successfully!';
+                formStatus.textContent = data.message || t('contact.success');
                 formStatus.className = 'success';
                 contactForm.reset();
             } else {
-                formStatus.textContent = data.message || 'Failed to send message. Please try again.';
+                formStatus.textContent = data.message || t('contact.fail');
                 formStatus.className = 'error';
             }
-        } catch {
-            formStatus.textContent = 'Connection error. Please try again later.';
+        } catch (err) {
+            formStatus.textContent = t('contact.network_error');
             formStatus.className = 'error';
         } finally {
             submitBtn.classList.remove('loading');

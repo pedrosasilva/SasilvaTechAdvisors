@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaSilva Tech Advisors | Strategic Technology Consultation</title>
+    <title>SaSilva Tech Advisors | Consultoria Tecnológica Estratégica</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -13,127 +13,138 @@
     <header id="site-header">
         <nav class="navbar">
             <a href="#hero" class="logo">
-                <span class="logo-emblem">
-                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" stroke="#C4AD6F" stroke-width="1.2" fill="none"/>
-                        <path d="M16 2l12 6-12 6-12-6L16 2z" fill="#C4AD6F" opacity="0.12"/>
-                        <path d="M16 14v16M4 8l12 6 12-6" stroke="#C4AD6F" stroke-width="0.8" opacity="0.4"/>
-                    </svg>
-                </span>
+                <img src="/images/logo.png" alt="SaSilva Tech Advisors" class="logo-emblem">
                 <span class="logo-text">SaSilva <span class="logo-accent">Tech</span></span>
             </a>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-                <span class="menu-bar"></span>
-            </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#hero" class="nav-link active" data-i18n="nav.home">Início</a></li>
+                <li><a href="#services" class="nav-link" data-i18n="nav.services">Serviços</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Nós</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
             </ul>
+            <div class="nav-controls">
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn active" id="lang-pt" aria-label="Português" title="Português">PT</button>
+                    <button class="lang-btn" id="lang-en" aria-label="English" title="English">EN</button>
+                </div>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="hero" class="hero-section">
-            <div class="hero-bg-image" id="hero-bg-parallax" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2000&q=80')"></div>
+            <div class="hero-bg-image" id="hero-bg-parallax"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="hero-eyebrow-line">
-                    <span class="hero-eyebrow">Established London</span>
+                    <span class="hero-eyebrow" data-i18n="hero.eyebrow">Estabelecida Lisboa</span>
                 </div>
                 <h1 class="hero-title">
-                    <span class="title-line">Strategic</span>
-                    <span class="title-line title-accent">Technology</span>
-                    <span class="title-line">Advisory</span>
+                    <span class="title-line" data-i18n="hero.title_1">Consultoria</span>
+                    <span class="title-line title-accent" data-i18n="hero.title_2">Tecnológica</span>
+                    <span class="title-line" data-i18n="hero.title_3">Estratégica</span>
                 </h1>
-                <p class="hero-subtitle">Boutique consultation for discerning organisations. We transform complex technology challenges into lasting, competitive advantage.</p>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Consultoria boutique para organizações exigentes.</p>
                 <div class="hero-cta">
-                    <a href="#services" class="btn btn-primary"><span>Our Services</span></a>
-                    <a href="#contact" class="btn btn-outline-light">Arrange Consultation</a>
-                </div>
-            </div>
-            <div class="hero-divider">
-                <div class="hero-divider-line">
-                    <span></span>
-                    <div class="hero-divider-diamond"></div>
-                    <span></span>
+                    <a href="#services" class="btn btn-primary"><span data-i18n="hero.services_cta">Os Nossos Serviços</span></a>
+                    <a href="#contact" class="btn btn-outline-light" data-i18n="hero.contact_cta">Agendar Consulta</a>
                 </div>
             </div>
             <div class="scroll-indicator">
                 <div class="scroll-line"></div>
-                <span>Discover</span>
+                <span data-i18n="hero.scroll">Descobrir</span>
             </div>
         </section>
 
         <section id="services" class="services-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-tag">Our Practice</span>
-                    <h2 class="section-title">Areas of Expertise</h2>
+                    <span class="section-tag" data-i18n="services.tag">A Nossa Prática</span>
+                    <h2 class="section-title" data-i18n="services.title">Os Nossos Serviços</h2>
                     <div class="ornament">
                         <span class="ornament-line"></span>
                         <span class="ornament-center"></span>
                         <span class="ornament-line"></span>
                     </div>
-                    <p class="section-subtitle" style="margin-top:18px">Comprehensive technology advisory tailored to your organisation's ambitions.</p>
+                    <p class="section-subtitle" style="margin-top:18px" data-i18n="services.subtitle">Consultoria técnica especializada para os desafios mais exigentes.</p>
                 </div>
-                <div class="services-grid">
+                <div class="services-grid grid-5">
                     <div class="service-card reveal">
                         <div class="service-card-inner">
-                            <span class="service-num">I&ensp;.</span>
-                            <h3>Architecture Design</h3>
-                            <p>Enterprise-grade system architecture that scales with your ambitions. Resilient, distributed systems built to endure.</p>
-                            <span class="service-arrow">Enquire further <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                            <span class="service-num">I</span>
+                            <h3 data-i18n="services.card_1_title">Consultoria Técnica para o Setor Jurídico</h3>
+                            <p data-i18n="services.card_1_desc">Prestação de assessoria científica e técnica independente para grandes escritórios de advogados.</p>
+                            <span class="service-arrow"><span data-i18n="services.enquire">Saber mais</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                         </div>
-                        <div class="service-border-accent"></div>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-card-inner">
-                            <span class="service-num">II&ensp;.</span>
-                            <h3>Cloud Strategy</h3>
-                            <p>End-to-end cloud migration and optimisation. Multi-cloud strategies that maximise performance, security, and cost-efficiency.</p>
-                            <span class="service-arrow">Enquire further <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                            <span class="service-num">II</span>
+                            <h3 data-i18n="services.card_2_title">Consultoria Técnica e Estratégica</h3>
+                            <p data-i18n="services.card_2_desc">Avaliação e desenho de arquiteturas tecnológicas complexas, garantindo o alinhamento entre infraestrutura digital e objetivos de negócio.</p>
+                            <span class="service-arrow"><span data-i18n="services.enquire">Saber mais</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                         </div>
-                        <div class="service-border-accent"></div>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-card-inner">
-                            <span class="service-num">III&ensp;.</span>
-                            <h3>DevOps Excellence</h3>
-                            <p>Streamline delivery pipelines with CI/CD best practices, infrastructure as code, and automated testing strategies.</p>
-                            <span class="service-arrow">Enquire further <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                            <span class="service-num">III</span>
+                            <h3 data-i18n="services.card_3_title">Sistemas Inteligentes e IoT</h3>
+                            <p data-i18n="services.card_3_desc">Desenvolvimento e otimização de soluções para cidades inteligentes e ambientes industriais.</p>
+                            <span class="service-arrow"><span data-i18n="services.enquire">Saber mais</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                         </div>
-                        <div class="service-border-accent"></div>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-card-inner">
-                            <span class="service-num">IV&ensp;.</span>
-                            <h3>Security &amp; Compliance</h3>
-                            <p>Threat modelling, vulnerability assessments, and compliance frameworks to safeguard your most critical digital assets.</p>
-                            <span class="service-arrow">Enquire further <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                            <span class="service-num">IV</span>
+                            <h3 data-i18n="services.card_4_title">Cibersegurança e Resiliência Digital</h3>
+                            <p data-i18n="services.card_4_desc">Auditoria, desenho de protocolos de rede e implementação de contramedidas avançadas para proteção de ativos digitais críticos.</p>
+                            <span class="service-arrow"><span data-i18n="services.enquire">Saber mais</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                         </div>
-                        <div class="service-border-accent"></div>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-card-inner">
-                            <span class="service-num">V&ensp;.</span>
-                            <h3>Performance Engineering</h3>
-                            <p>Deep-dive analysis and optimisation to deliver measurable improvements in throughput, latency, and reliability.</p>
-                            <span class="service-arrow">Enquire further <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                            <span class="service-num">V</span>
+                            <h3 data-i18n="services.card_5_title">EdgeAI e Federated Learning</h3>
+                            <p data-i18n="services.card_5_desc">Integração de Inteligência Artificial descentralizada, com processamento local e máxima privacidade.</p>
+                            <span class="service-arrow"><span data-i18n="services.enquire">Saber mais</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                         </div>
-                        <div class="service-border-accent"></div>
                     </div>
-                    <div class="service-card reveal">
-                        <div class="service-card-inner">
-                            <span class="service-num">VI&ensp;.</span>
-                            <h3>Team Mentoring</h3>
-                            <p>Elevate your engineering culture with hands-on mentorship, structured workshops, and comprehensive knowledge transfer.</p>
-                            <span class="service-arrow">Enquire further <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                        </div>
-                        <div class="service-border-accent"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="advantages" class="advantages-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag" data-i18n="advantages.tag">Porquê Escolher-nos</span>
+                    <h2 class="section-title" data-i18n="advantages.title">As Vantagens</h2>
+                    <div class="ornament">
+                        <span class="ornament-line"></span>
+                        <span class="ornament-center"></span>
+                        <span class="ornament-line"></span>
+                    </div>
+                    <p class="section-subtitle" style="margin-top:18px" data-i18n="advantages.subtitle">As vantagens da consultoria técnica especializada.</p>
+                </div>
+                <div class="advantages-grid">
+                    <div class="advantage-item reveal">
+                        <span class="advantage-marker">&#9670;</span>
+                        <h3 data-i18n="advantages.card_1_title">Minimização do Risco Tecnológico</h3>
+                        <p data-i18n="advantages.card_1_desc">A tomada de decisões assente em metodologias científicas rigorosas e validadas previne investimentos obsoletos ou falhas de arquitetura críticas.</p>
+                    </div>
+                    <div class="advantage-item reveal">
+                        <span class="advantage-marker">&#9670;</span>
+                        <h3 data-i18n="advantages.card_2_title">Segurança e Privacidade por Desenho</h3>
+                        <p data-i18n="advantages.card_2_desc">A integração de soluções avançadas garante a conformidade com as normas mais estritas de proteção de dados no desenvolvimento de sistemas complexos.</p>
+                    </div>
+                    <div class="advantage-item reveal">
+                        <span class="advantage-marker">&#9670;</span>
+                        <h3 data-i18n="advantages.card_3_title">Inovação de Fronteira</h3>
+                        <p data-i18n="advantages.card_3_desc">O acesso direto ao conhecimento de vanguarda no setor das engenharias permite antecipar tendências e posicionar as organizações na liderança tecnológica.</p>
                     </div>
                 </div>
             </div>
@@ -141,28 +152,27 @@
 
         <section id="about" class="about-section">
             <div class="about-bg">
-                <img class="about-bg-img" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=60" alt="" aria-hidden="true" data-parallax-speed="0.04">
-                <img class="about-bg-img" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=60" alt="" aria-hidden="true" data-parallax-speed="-0.05">
+                <img class="about-bg-img" src="/images/about-bg-1.png" alt="" aria-hidden="true" data-parallax-speed="0.04">
+                <img class="about-bg-img" src="/images/about-bg-2.png" alt="" aria-hidden="true" data-parallax-speed="-0.05">
             </div>
             <div class="container">
                 <div class="about-grid">
                     <div class="about-content reveal">
-                        <span class="section-tag">Our Heritage</span>
-                        <h2 class="about-heading">A Tradition of<br><em>Technical Leadership</em></h2>
-                        <p class="about-text">SaSilva Tech Advisors is a boutique technology consultation firm founded by industry veterans. We believe that exceptional technology decisions require both deep expertise and a measured, strategic approach.</p>
-                        <p class="about-text">Our engagement model is built on long-term partnership rather than quick fixes. We take the time to understand your domain, challenge assumptions thoughtfully, and deliver solutions built to endure for years to come.</p>
+                        <span class="section-tag" data-i18n="about.tag">A Nossa Equipa</span>
+                        <h2 class="about-heading"><span data-i18n="about.title">O Valor do Nosso Corpo Técnico</span><br><em data-i18n="about.title_em">Excelência Científica e Rigor Técnico</em></h2>
+                        <p class="about-text" data-i18n="about.text_1">O valor fundamental da SaSilva Tech Advisors Group reside na sólida formação e na reputação internacional do seu corpo técnico. Composto por colaboradores especialistas com percursos firmados na academia e na investigação científica avançada, o grupo alia a profundidade do conhecimento teórico à agilidade da engenharia prática. Esta sinergia garante que cada parecer, auditoria ou arquitetura proposta beneficie do mais alto nível de rigor e validação científica do mercado.</p>
                         <div class="about-stats">
                             <div class="stat">
                                 <span class="stat-number">15<span class="stat-plus">+</span></span>
-                                <span class="stat-label">Years Experience</span>
+                                <span class="stat-label" data-i18n="about.stat_years">Anos de Experiência</span>
                             </div>
                             <div class="stat">
                                 <span class="stat-number">100<span class="stat-plus">+</span></span>
-                                <span class="stat-label">Projects Delivered</span>
+                                <span class="stat-label" data-i18n="about.stat_projects">Projetos Concluídos</span>
                             </div>
                             <div class="stat">
                                 <span class="stat-number">40<span class="stat-plus">+</span></span>
-                                <span class="stat-label">Enterprise Clients</span>
+                                <span class="stat-label" data-i18n="about.stat_clients">Clientes Empresariais</span>
                             </div>
                         </div>
                     </div>
@@ -171,23 +181,23 @@
                             <div class="card-accent-top"></div>
                             <div class="card-accent-bot"></div>
                             <div class="visual-card-inner">
-                                <h3>Our Principles</h3>
+                                <h3 data-i18n="about.principles">Os Nossos Princípios</h3>
                                 <ul class="values-list">
                                     <li>
                                         <span class="value-marker"><span class="value-marker-inner"></span></span>
-                                        Technical Excellence Without Compromise
+                                        <span data-i18n="about.principle_1">Excelência Técnica Sem Compromissos</span>
                                     </li>
                                     <li>
                                         <span class="value-marker"><span class="value-marker-inner"></span></span>
-                                        Honest Assessment, Actionable Advice
+                                        <span data-i18n="about.principle_2">Avaliação Honesta, Orientação Acionável</span>
                                     </li>
                                     <li>
                                         <span class="value-marker"><span class="value-marker-inner"></span></span>
-                                        Long-term Thinking Over Quick Wins
+                                        <span data-i18n="about.principle_3">Pensamento de Longo Prazo</span>
                                     </li>
                                     <li>
                                         <span class="value-marker"><span class="value-marker-inner"></span></span>
-                                        Transparency in Every Engagement
+                                        <span data-i18n="about.principle_4">Transparência em Cada Interação</span>
                                     </li>
                                 </ul>
                             </div>
@@ -199,22 +209,22 @@
 
         <section id="contact" class="contact-section">
             <div class="contact-bg">
-                <img class="contact-bg-img" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=60" alt="" aria-hidden="true" data-parallax-speed="0.03">
-                <img class="contact-bg-img" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=60" alt="" aria-hidden="true" data-parallax-speed="-0.04">
+                <img class="contact-bg-img" src="/images/about-bg-1.png" alt="" aria-hidden="true" data-parallax-speed="0.03">
+                <img class="contact-bg-img" src="/images/about-bg-2.png" alt="" aria-hidden="true" data-parallax-speed="-0.04">
             </div>
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-info reveal">
-                        <span class="section-tag">Get In Touch</span>
-                        <h2 class="contact-heading">Begin the<br><em>Conversation</em></h2>
-                        <p class="contact-intro">Ready to take the next step? We welcome detailed enquiries and will respond within one business day.</p>
+                        <span class="section-tag" data-i18n="contact.tag">Entre em Contacto</span>
+                        <h2 class="contact-heading"><span data-i18n="contact.title_1">Inicie a</span><br><em data-i18n="contact.title_em">Conversa</em></h2>
+                        <p class="contact-intro" data-i18n="contact.intro">Pronto para dar o próximo passo? Aceitamos pedidos detalhados e responderemos num dia útil.</p>
                         <div class="contact-details">
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                 </div>
                                 <div>
-                                    <h4>Email</h4>
+                                    <h4 data-i18n="contact.email_label">Email</h4>
                                     <a href="mailto:info@sasilvatech.com">info@sasilvatech.com</a>
                                 </div>
                             </div>
@@ -223,8 +233,8 @@
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                 </div>
                                 <div>
-                                    <h4>Location</h4>
-                                    <p>London, United Kingdom</p>
+                                    <h4 data-i18n="contact.location_label">Localização</h4>
+                                    <p data-i18n="contact.location_value">Lisboa, Portugal</p>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -232,28 +242,28 @@
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                                 </div>
                                 <div>
-                                    <h4>Availability</h4>
-                                    <p>Mon &ndash; Fri, 9:00 &ndash; 18:00 GMT</p>
+                                    <h4 data-i18n="contact.availability_label">Disponibilidade</h4>
+                                    <p data-i18n="contact.availability_value">Seg &ndash; Sex, 9:00 &ndash; 18:00 WET</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="contact-form-wrapper reveal">
-                        <form id="contact-form" class="contact-form">
+                        <form id="contact-form" class="contact-form" data-i18n-section="contact">
                             <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                <label for="name" data-i18n="contact.name_label">Nome Completo</label>
+                                <input type="text" id="name" name="name" data-i18n-placeholder="contact.name_placeholder" placeholder="O seu nome completo" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                <label for="email" data-i18n="contact.email_label">Email</label>
+                                <input type="email" id="email" name="email" data-i18n-placeholder="contact.email_placeholder" placeholder="seu@email.com" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or challenge..." required></textarea>
+                                <label for="message" data-i18n="contact.message_label">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" data-i18n-placeholder="contact.message_placeholder" placeholder="Conte-nos sobre o seu projeto ou desafio..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-navy btn-submit">
-                                <span class="btn-text">Send Enquiry</span>
+                                <span class="btn-text" data-i18n="contact.submit">Enviar Pedido</span>
                                 <span class="btn-loader"></span>
                             </button>
                             <div id="form-status"></div>
@@ -270,22 +280,23 @@
                 <div class="footer-content">
                     <div class="footer-brand">
                         <span class="footer-logo">SaSilva <span class="logo-accent">Tech</span></span>
-                        <p>Strategic technology consultation for the modern enterprise.</p>
+                        <p data-i18n="footer.tagline">Consultoria tecnológica estratégica para a empresa moderna.</p>
                     </div>
                     <div class="footer-links">
-                        <a href="#hero">Home</a>
-                        <a href="#services">Services</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
+                        <a href="#hero" data-i18n="footer.home">Início</a>
+                        <a href="#services" data-i18n="footer.services">Serviços</a>
+                        <a href="#about" data-i18n="footer.about">Sobre Nós</a>
+                        <a href="#contact" data-i18n="footer.contact">Contacto</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 SaSilva Tech Advisors. All rights reserved.</p>
+                <p data-i18n="footer.rights">&copy; 2026 SaSilva Tech Advisors. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <script src="/js/i18n.js"></script>
     <script src="/js/main.js"></script>
 </body>
 </html>

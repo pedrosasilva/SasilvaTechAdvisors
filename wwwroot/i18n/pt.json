@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "locale": "pt",
+    "direction": "ltr"
+  },
+  "nav": {
+    "home": "Início",
+    "services": "Serviços",
+    "about": "Sobre Nós",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "eyebrow": "Nascida em Portugal",
+    "title_1": "Consultoria",
+    "title_2": "Tecnológica",
+    "title_3": "Estratégica",
+    "subtitle": "A SaSilva Tech Advisors Group é uma boutique de consultoria de elite dedicada a guiar organizações e prestigiadas firmas de advocacia na resolução de desafios complexos em ecossistemas tecnológicos avançados. Combinando décadas de excelência académica, investigação científica e experiência prática de engenharia, o grupo foca-se em desenhar soluções robustas, seguras e em fornecer pareceres periciais de alto rigor em ambientes inteligentes e digitais.",
+    "services_cta": "Os Nossos Serviços",
+    "contact_cta": "Agendar Consulta",
+    "scroll": "Descobrir"
+  },
+  "services": {
+    "tag": "A Nossa Prática",
+    "title": "Os Nossos Serviços",
+    "subtitle": "Consultoria técnica especializada para os desafios mais exigentes.",
+
+    "card_1_title": "Consultoria Técnica para o Setor Jurídico",
+    "card_1_desc": "Prestação de assessoria científica e técnica independente para grandes escritórios de advogados. Elaboração de pareceres técnicos fundamentados, auditorias a sistemas complexos no âmbito de litígios e arbitragens, e validação pericial de propriedade intelectual ou conformidade com regulamentos de IA e proteção de dados.",
+
+    "card_2_title": "Consultoria Técnica e Estratégica",
+    "card_2_desc": "Avaliação e desenho de arquiteturas tecnológicas complexas, garantindo o alinhamento entre a infraestrutura digital e os objetivos macro de negócio.",
+
+    "card_3_title": "Sistemas Inteligentes e IoT",
+    "card_3_desc": "Desenvolvimento e otimização de soluções para cidades inteligentes e ambientes industriais, com especial enfoque na eficiência, descentralização e gestão de dados sensíveis.",
+
+    "card_4_title": "Cibersegurança e Resiliência Digital",
+    "card_4_desc": "Auditoria, desenho de protocolos de rede e implementação de contramedidas avançadas para proteção de ativos digitais críticos face a ameaças híbridas modernas.",
+
+    "card_5_title": "EdgeAI e Federated Learning",
+    "card_5_desc": "Integração de Inteligência Artificial descentralizada, permitindo o processamento de dados localmente com máxima privacidade e otimização de recursos.",
+
+    "enquire": "Saber mais"
+  },
+  "advantages": {
+    "tag": "Porquê Escolher-nos",
+    "title": "As Vantagens",
+    "subtitle": "As_vantagens da consultoria técnica especializada.",
+
+    "card_1_title": "Minimização do Risco Tecnológico",
+    "card_1_desc": "A tomada de decisões assente em metodologias científicas rigorosas e validadas previne investimentos obsoletos ou falhas de arquitetura críticas.",
+
+    "card_2_title": "Segurança e Privacidade por Desenho",
+    "card_2_desc": "A integração de soluções avançadas garante a conformidade com as normas mais estritas de proteção de dados no desenvolvimento de sistemas complexos.",
+
+    "card_3_title": "Inovação de Fronteira",
+    "card_3_desc": "O acesso direto ao conhecimento de vanguarda no setor das engenharias permite antecipar tendências e posicionar as organizações na liderança tecnológica."
+  },
+  "about": {
+    "tag": "A Nossa Equipa",
+    "title": "O Valor do Nosso Corpo Técnico",
+    "title_em": "Excelência Científica e Rigor Técnico",
+    "text_1": "O valor fundamental da SaSilva Tech Advisors Group reside na sólida formação e na reputação internacional do seu corpo técnico. Composto por colaboradores especialistas com percursos firmados na academia e na investigação científica avançada, o grupo alia a profundidade do conhecimento teórico à agilidade da engenharia prática. Esta sinergia garante que cada parecer, auditoria ou arquitetura proposta beneficie do mais alto nível de rigor e validação científica do mercado.",
+
+    "stat_years": "Anos de Experiência",
+    "stat_projects": "Projetos Concluídos",
+    "stat_clients": "Clientes Empresariais",
+    "principles": "Os Nossos Princípios",
+    "principle_1": "Excelência Técnica Sem Compromissos",
+    "principle_2": "Avaliação Honesta, Orientação Acionável",
+    "principle_3": "Pensamento de Longo Prazo",
+    "principle_4": "Transparência em Cada Interação"
+  },
+  "contact": {
+    "tag": "Entre em Contacto",
+    "title_1": "Inicie a",
+    "title_em": "Conversa",
+    "intro": "Pronto para dar o próximo passo? Aceitamos pedidos detalhados e responderemos num dia útil.",
+    "email_label": "Email",
+    "location_label": "Localização",
+    "location_value": "Leiria, Portugal",
+    "availability_label": "Disponibilidade",
+    "availability_value": "Seg – Sex, 9:00 – 18:00 WET",
+    "name_label": "Nome Completo",
+    "name_placeholder": "O seu nome completo",
+    "email_placeholder": "seu@email.com",
+    "message_label": "Mensagem",
+    "message_placeholder": "Conte-nos sobre o seu projeto ou desafio...",
+    "submit": "Enviar Pedido",
+    "field_error": "Por favor, preencha todos os campos.",
+    "success": "Mensagem enviada com sucesso!",
+    "fail": "Falha ao enviar mensagem. Por favor, tente novamente.",
+    "network_error": "Erro de conexão. Por favor, tente novamente mais tarde."
+  },
+  "footer": {
+    "tagline": "Consultoria tecnológica estratégica para a empresa moderna.",
+    "rights": "© 2026 SaSilva Tech Advisors. Todos os direitos reservados.",
+    "home": "Início",
+    "services": "Serviços",
+    "about": "Sobre Nós",
+    "contact": "Contacto"
+  }
+}
