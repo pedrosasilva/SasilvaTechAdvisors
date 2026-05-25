@@ -178,15 +178,15 @@ img { display:block; max-width:100%; }
 }
 .hero-bg-image {
     background-image:url('../images/hero-bg.png');
-    position:absolute; inset:-80px;
+    position:absolute; inset:-30px;
     background-size:cover; background-position:center 20%;
-    will-change:transform; z-index:0; filter:grayscale(25%) contrast(0.95) brightness(0.85);
+    will-change:transform; z-index:0; filter:grayscale(25%) contrast(0.95) brightness(0.95);
 }
 .hero-overlay {
     position:absolute; inset:0; z-index:1;
     background:
-        linear-gradient(180deg, rgba(13,27,42,0.55) 0%, rgba(13,27,42,0.78) 40%, rgba(13,27,42,0.92) 100%),
-        linear-gradient(90deg, rgba(13,27,42,0.3) 0%, transparent 60%);
+        linear-gradient(180deg, rgba(13,27,42,0.4) 0%, rgba(13,27,42,0.62) 40%, rgba(13,27,42,0.82) 100%),
+        linear-gradient(90deg, rgba(13,27,42,0.2) 0%, transparent 60%);
 }
 .hero-content { position:relative; z-index:2; max-width:700px; }
 .hero-eyebrow {
