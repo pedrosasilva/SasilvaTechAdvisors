@@ -7,14 +7,15 @@
     "home": "Início",
     "services": "Serviços",
     "about": "Sobre Nós",
+    "track": "Percurso",
     "contact": "Contacto"
   },
   "hero": {
     "eyebrow": "Nascida em Portugal",
-    "title_1": "Consultoria",
-    "title_2": "Tecnológica",
-    "title_3": "Estratégica",
-    "subtitle": "A SaSilva Tech Advisors Group é uma boutique de consultoria de elite dedicada a guiar organizações e prestigiadas firmas de advocacia na resolução de desafios complexos em ecossistemas tecnológicos avançados. Combinando décadas de excelência académica, investigação científica e experiência prática de engenharia, o grupo foca-se em desenhar soluções robustas, seguras e em fornecer pareceres periciais de alto rigor em ambientes inteligentes e digitais.",
+    "title_1": "Engenharia de Sistemas Inteligentes",
+    "title_2": "e Consultoria Estratégica",
+    "title_3": "em Conformidade Tecnológica",
+    "subtitle": "A SaSilva Tech é uma consultoria boutique especializada em cibersegurança, conformidade regulatória – NIS2, Regulamento Europeu de Inteligência Artificial (AI Act) e RGPD – e sistemas inteligentes de IoT, dedicada a apoiar hospitais, indústria, grandes consultoras e escritórios de advocacia na resolução de desafios técnicos complexos. Construída sobre décadas de investigação científica de ponta e experiência real de engenharia em ambientes críticos, a SaSilva Tech combina rigor académico com profundidade técnica para entregar pareceres, auditorias e arquiteturas que resistem ao escrutínio mais exigente.",
     "services_cta": "Os Nossos Serviços",
     "contact_cta": "Agendar Consulta",
     "scroll": "Descobrir"
@@ -24,32 +25,31 @@
     "title": "Os Nossos Serviços",
     "subtitle": "Consultoria técnica especializada para os desafios mais exigentes.",
 
-    "card_1_title": "Consultoria Técnica para o Setor Jurídico",
-    "card_1_desc": "Prestação de assessoria científica e técnica independente para grandes escritórios de advogados. Elaboração de pareceres técnicos fundamentados, auditorias a sistemas complexos no âmbito de litígios e arbitragens, e validação pericial de propriedade intelectual ou conformidade com regulamentos de IA e proteção de dados.",
+    "card_1_title": "Auditoria Técnica de Conformidade NIS2 em Infraestruturas IoT/OT",
+    "card_1_desc": "Avaliação no terreno, não apenas documental, da postura de cibersegurança de dispositivos conectados e sistemas de controlo industrial, em hospitais, indústria e logística, à luz do Decreto-Lei 125/2025 e da Diretiva NIS2.",
 
-    "card_2_title": "Consultoria Técnica e Estratégica",
-    "card_2_desc": "Avaliação e desenho de arquiteturas tecnológicas complexas, garantindo o alinhamento entre a infraestrutura digital e os objetivos macro de negócio.",
+    "card_2_title": "Avaliação de Supervisão Humana em Sistemas de IA (AI Act)",
+    "card_2_desc": "Verificação técnica e independente de que sistemas de Inteligência Artificial de alto risco cumprem, na prática e não apenas no papel, os requisitos de supervisão humana do Artigo 14.º do Regulamento Europeu de IA.",
 
-    "card_3_title": "Sistemas Inteligentes e IoT",
-    "card_3_desc": "Desenvolvimento e otimização de soluções para cidades inteligentes e ambientes industriais, com especial enfoque na eficiência, descentralização e gestão de dados sensíveis.",
+    "card_3_title": "Consultoria Técnica Especializada para o Setor Jurídico e Alta Advocacia",
+    "card_3_desc": "Assessoria científica e técnica independente para escritórios de advogados: pareceres técnicos fundamentados, auditorias periciais no âmbito de litígios e arbitragens, e validação técnica de propriedade intelectual ou de conformidade com os regulamentos de IA e proteção de dados.",
 
-    "card_4_title": "Cibersegurança e Resiliência Digital",
-    "card_4_desc": "Auditoria, desenho de protocolos de rede e implementação de contramedidas avançadas para proteção de ativos digitais críticos face a ameaças híbridas modernas.",
+    "card_4_title": "Sistemas Inteligentes, IoT e Edge AI",
+    "card_4_desc": "Desenho, desenvolvimento e otimização de soluções de IoT para ambientes industriais e cidades inteligentes, com integração de Inteligência Artificial descentralizada (Edge AI / Federated Learning) para máxima privacidade e eficiência de recursos.",
 
-    "card_5_title": "EdgeAI e Federated Learning",
-    "card_5_desc": "Integração de Inteligência Artificial descentralizada, permitindo o processamento de dados localmente com máxima privacidade e otimização de recursos.",
+    "note": "Trabalhamos tanto diretamente com organizações como em parceria técnica com consultoras internacionais de maior dimensão, sempre que é necessária uma camada adicional de profundidade técnica dentro do seu próprio projeto de conformidade.",
 
     "enquire": "Saber mais"
   },
   "advantages": {
     "tag": "Porquê Escolher-nos",
     "title": "As Vantagens",
-    "subtitle": "As_vantagens da consultoria técnica especializada.",
+    "subtitle": "As vantagens da consultoria técnica especializada.",
 
     "card_1_title": "Minimização do Risco Tecnológico",
     "card_1_desc": "A tomada de decisões assente em metodologias científicas rigorosas e validadas previne investimentos obsoletos ou falhas de arquitetura críticas.",
 
-    "card_2_title": "Segurança e Privacidade por Desenho",
+    "card_2_title": "Segurança e Privacidade por Desenho (by design)",
     "card_2_desc": "A integração de soluções avançadas garante a conformidade com as normas mais estritas de proteção de dados no desenvolvimento de sistemas complexos.",
 
     "card_3_title": "Inovação de Fronteira",
@@ -59,16 +59,27 @@
     "tag": "A Nossa Equipa",
     "title": "O Valor do Nosso Corpo Técnico",
     "title_em": "Excelência Científica e Rigor Técnico",
-    "text_1": "O valor fundamental da SaSilva Tech Advisors Group reside na sólida formação e na reputação internacional do seu corpo técnico. Composto por colaboradores especialistas com percursos firmados na academia e na investigação científica avançada, o grupo alia a profundidade do conhecimento teórico à agilidade da engenharia prática. Esta sinergia garante que cada parecer, auditoria ou arquitetura proposta beneficie do mais alto nível de rigor e validação científica do mercado.",
+    "text_1": "O valor fundamental da SaSilva Tech reside na sólida formação e na reputação internacional da sua equipa fundadora. Com uma carreira académica firmada na investigação científica avançada em redes, Internet das Coisas e Inteligência Artificial, o fundador alia a profundidade do conhecimento teórico à experiência prática de engenharia em projetos reais, complementada por colaboradores dedicados a áreas específicas como gestão, produção digital e perícia técnica. Esta sinergia garante que cada parecer, auditoria ou arquitetura proposta beneficie do mais alto nível de rigor e validação científica do mercado.",
 
-    "stat_years": "Anos de Experiência",
-    "stat_projects": "Projetos Concluídos",
-    "stat_clients": "Clientes Empresariais",
     "principles": "Os Nossos Princípios",
     "principle_1": "Excelência Técnica Sem Compromissos",
     "principle_2": "Avaliação Honesta, Orientação Acionável",
     "principle_3": "Pensamento de Longo Prazo",
     "principle_4": "Transparência em Cada Interação"
+  },
+  "track": {
+    "tag": "O Nosso Percurso",
+    "title": "Casos Ilustrativos",
+    "intro": "Os casos abaixo representam o percurso de investigação e engenharia que está na origem da SaSilva Tech, não projetos realizados pela empresa, que é de constituição recente.",
+
+    "case_1_title": "Monitorização IoT para Frotas Industriais",
+    "case_1_desc": "Plataforma de IoT para monitorização remota de equipamento pesado de múltiplas marcas, incluindo máquinas sem sistemas de bordo nativos, validada em ambiente real com uma das maiores empresas de construção civil portuguesas. Resultado: deteção preditiva de avarias e patente internacional registada (PCT).",
+
+    "case_2_title": "Governação de Agentes de Inteligência Artificial",
+    "case_2_desc": "Conceito de investigação para agentes de IA (\"Guardian Agents\") que supervisionam sistemas autónomos em infraestruturas críticas – energia, transportes, saúde – com conformidade nativa com o AI Act e a Diretiva NIS2. Inclui o desenho de um piloto de validação na área da nefrologia, em parceria com um hospital espanhol.",
+
+    "case_3_title": "Resiliência Humana em Ambientes de Alta Exigência",
+    "case_3_desc": "Validação, em ambiente operacional de defesa, de tecnologia que mede carga cognitiva e emocional em tempo real para ajustar dinamicamente a postura de segurança. A mesma tecnologia é aplicável a Centros de Operações de Segurança (SOC) e salas de controlo industrial, onde a fadiga humana é um risco direto de segurança."
   },
   "contact": {
     "tag": "Entre em Contacto",
@@ -76,10 +87,11 @@
     "title_em": "Conversa",
     "intro": "Pronto para dar o próximo passo? Aceitamos pedidos detalhados e responderemos num dia útil.",
     "email_label": "Email",
-    "location_label": "Localização",
-    "location_value": "Leiria, Portugal",
-    "availability_label": "Disponibilidade",
-    "availability_value": "Seg – Sex, 9:00 – 18:00 WET",
+    "email_value": "a definir",
+    "linkedin_label": "LinkedIn",
+    "linkedin_value": "a definir",
+    "website_label": "Website",
+    "website_value": "a definir",
     "name_label": "Nome Completo",
     "name_placeholder": "O seu nome completo",
     "email_placeholder": "seu@email.com",
@@ -92,11 +104,12 @@
     "network_error": "Erro de conexão. Por favor, tente novamente mais tarde."
   },
   "footer": {
-    "tagline": "Consultoria tecnológica estratégica para a empresa moderna.",
+    "tagline": "Engenharia de Sistemas Inteligentes e Conformidade Tecnológica.",
     "rights": "© 2026 SaSilva Tech Advisors. Todos os direitos reservados.",
     "home": "Início",
     "services": "Serviços",
     "about": "Sobre Nós",
+    "track": "Percurso",
     "contact": "Contacto"
   }
 }
