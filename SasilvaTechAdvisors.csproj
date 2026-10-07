@@ -7,8 +7,5 @@
     <RootNamespace>SasilvaTechAdvisors</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.16.0" />
-  </ItemGroup>
 
 </Project>

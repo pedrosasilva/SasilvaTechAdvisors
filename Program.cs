@@ -1,14 +1,17 @@
+using System.Text;
+using System.Text.Json;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Net;
-using MailKit.Net.Smtp;
-using MailKit.Security;
-using MimeKit;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
+builder.Services.AddHttpClient("formspree", client =>
+{
+    client.BaseAddress = new Uri("https://formspree.io");
+    client.Timeout = TimeSpan.FromSeconds(20);
+});
 
 var app = builder.Build();
 
@@ -44,61 +47,51 @@ app.MapPost("/contact/submit", async (HttpRequest request) =>
         return Results.BadRequest(new { success = false, message = "Please fill all fields correctly." });
     }
 
-    var smtpHost = config["Smtp:Host"];
-    var smtpPort = int.TryParse(config["Smtp:Port"], out var port) ? port : 587;
-    var smtpUser = config["Smtp:Username"];
-    var smtpPass = (config["Smtp:Password"] ?? string.Empty).Trim().Replace(" ", "");
-    var adminTo = config["Smtp:AdminEmail"];
-    var useSsl = bool.TryParse(config["Smtp:EnableSsl"], out var ssl) && ssl;
+    var formId = (config["Formspree:FormId"] ?? string.Empty).Trim();
+    var accessKey = (config["Formspree:AccessKey"] ?? string.Empty).Trim();
 
-    if (string.IsNullOrWhiteSpace(smtpHost) || string.IsNullOrWhiteSpace(smtpUser)
-        || string.IsNullOrWhiteSpace(smtpPass) || string.IsNullOrWhiteSpace(adminTo))
+    if (string.IsNullOrWhiteSpace(formId))
     {
         logger.LogError(
-            "Contact form submitted but SMTP is not fully configured (Host/Username/Password/AdminEmail). Submission: {Name} <{Email}> - {Message}",
+            "Contact form submitted but Formspree is not configured (FormId). Submission: {Name} <{Email}> - {Message}",
             req.Name, req.Email, req.Message);
         return Results.Json(
             new { success = false, message = "We're unable to process your message right now. Please try again shortly or email us directly." },
             statusCode: StatusCodes.Status500InternalServerError);
     }
 
-    // Validated non-null past this point.
-    var fromAddr = string.IsNullOrWhiteSpace(config["Smtp:From"]) ? smtpUser : config["Smtp:From"]!;
-
     try
     {
-        var mimeMessage = new MimeMessage();
-        mimeMessage.From.Add(new MailboxAddress("SaSilva Tech", fromAddr));
-        mimeMessage.To.Add(new MailboxAddress("Admin", adminTo));
-        mimeMessage.ReplyTo.Add(new MailboxAddress(req.Name, req.Email));
-        mimeMessage.Subject = $"New Contact Inquiry from {req.Name}";
+        var httpFactory = request.HttpContext.RequestServices.GetRequiredService<IHttpClientFactory>();
+        using var client = httpFactory.CreateClient("formspree");
 
-        var emailBuilder = new BodyBuilder();
-        var messageHtml = $"<h2>New Contact Form Submission</h2>" +
-            $"<p><strong>Name:</strong> {WebUtility.HtmlEncode(req.Name)}</p>" +
-            $"<p><strong>Email:</strong> {WebUtility.HtmlEncode(req.Email)}</p>" +
-            $"<p><strong>Message:</strong></p>" +
-            $"<p>{WebUtility.HtmlEncode(req.Message)}</p>";
-        emailBuilder.HtmlBody = messageHtml;
-        mimeMessage.Body = emailBuilder.ToMessageBody();
+        var json = JsonSerializer.Serialize(new { name = req.Name, email = req.Email, message = req.Message });
+        using var requestMessage = new HttpRequestMessage(HttpMethod.Post, $"/f/{Uri.EscapeDataString(formId)}")
+        {
+            Content = new StringContent(json, Encoding.UTF8, "application/json")
+        };
+        if (!string.IsNullOrWhiteSpace(accessKey))
+            requestMessage.Headers.Add("Access", accessKey);
 
-        using var smtp = new SmtpClient();
-        if (useSsl)
-            await smtp.ConnectAsync(smtpHost, smtpPort, SecureSocketOptions.StartTls);
-        else
-            await smtp.ConnectAsync(smtpHost, smtpPort, SecureSocketOptions.None);
+        using var response = await client.SendAsync(requestMessage);
+        var responseBody = await response.Content.ReadAsStringAsync();
 
-        await smtp.AuthenticateAsync(smtpUser, smtpPass);
-        await smtp.SendAsync(mimeMessage);
-        await smtp.DisconnectAsync(true);
+        if (!response.IsSuccessStatusCode)
+        {
+            logger.LogError("Formspree rejected the submission (status {Status}, body: {Body}) (visitor: {Visitor}) - {Message}",
+                (int)response.StatusCode, responseBody, req.Email, req.Message);
+            return Results.Json(
+                new { success = false, message = "Something went wrong sending your message. Please try again or email us directly." },
+                statusCode: StatusCodes.Status500InternalServerError);
+        }
 
-        logger.LogInformation("Contact email sent to {Admin} via {Host}:{Port} (visitor: {Visitor})",
-            adminTo, smtpHost, smtpPort, req.Email);
+        logger.LogInformation("Contact form submission forwarded via Formspree form {FormId} (visitor: {Visitor}, name: {Name})",
+            formId, req.Email, req.Name);
         return Results.Ok(new { success = true, message = "Thank you for reaching out. We'll be in touch shortly." });
     }
     catch (Exception ex)
     {
-        logger.LogError(ex, "Failed to send contact email (visitor: {Visitor}, sender: {Sender}, admin: {Admin})", req.Email, fromAddr, adminTo);
+        logger.LogError(ex, "Failed to forward contact form submission to Formspree (visitor: {Visitor})", req.Email);
         return Results.Json(
             new { success = false, message = "Something went wrong sending your message. Please try again or email us directly." },
             statusCode: StatusCodes.Status500InternalServerError);
